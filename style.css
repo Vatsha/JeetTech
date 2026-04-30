@@ -638,7 +638,7 @@ footer {
 
 @media (max-width: 820px) {
   .nav-links { display: none; }
-  .hero { padding-top: 50px; }
+  .hero { padding: 60px 20px 40px; }
   .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-visual { width: min(100%, 620px); }
   .node { min-width: 150px; }
@@ -649,18 +649,116 @@ footer {
   .node-sql { right: 6%; bottom: 18%; }
   .node-other { left: 6%; bottom: 18%; }
   .node-genai { left: 50%; bottom: 8%; transform: translateX(-50%); }
+  .tech-strip { padding: 20px 16px; }
+  .tech-strip-inner { padding: 16px 20px; }
+  .services { padding: 32px 20px 16px; }
+  .about { padding: 32px 20px 16px; }
+  .portfolio { padding: 32px 20px 16px; }
+  .industries { padding: 28px 20px; }
+  .contact { padding: 0 20px 40px; }
 }
 
 @media (max-width: 640px) {
-  .navbar-inner { flex-direction: column; align-items: stretch; gap: 16px; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .button-secondary, .button-primary { width: 100%; }
-  .hero-metrics { grid-template-columns: 1fr; }
+  .navbar-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+  .nav-cta {
+    align-self: center;
+    max-width: 280px;
+  }
+  .hero {
+    padding: 50px 16px 30px;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .button-primary,
+  .button-secondary {
+    width: 100%;
+    min-width: auto;
+  }
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .metric-card {
+    padding: 14px 12px;
+  }
+  .metric-card strong {
+    font-size: 1.3rem;
+  }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .industry-grid { grid-template-columns: 1fr; }
-  .tech-strip-inner { flex-direction: column; }
-  .contact-container { grid-template-columns: 1fr; }
-  .hero-copy { gap: 22px; }
-  .hero-visual { width: 100%; }
+  .tech-strip-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .tech-logos {
+    justify-content: center;
+    gap: 8px;
+  }
+  .tech-pill {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .contact-info {
+    padding: 24px 20px;
+  }
+  .contact-form {
+    padding: 24px 20px;
+  }
+  .hero-copy { gap: 20px; }
+  .hero-visual {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+  .section-heading h2 {
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+  }
+  .about-content p {
+    font-size: 0.95rem;
+  }
+  .portfolio-card {
+    padding: 20px;
+  }
+  .portfolio-card h3 {
+    font-size: 1.1rem;
+  }
+  .service-card {
+    padding: 20px;
+  }
+  .why-choose {
+    padding: 24px 20px;
+  }
+  .why-choose ul {
+    gap: 14px;
+  }
+  .industries h2 {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+  .industry-grid span {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+  footer {
+    padding: 20px 16px;
+    font-size: 0.9rem;
+  }
 }
