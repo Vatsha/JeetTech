@@ -4,7 +4,6 @@ function scrollToContact() {
     });
 }
 
-// Optional: Add form submission feedback and handle same-origin/backend mismatch
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
@@ -16,33 +15,21 @@ if (contactForm) {
         button.textContent = 'Sending...';
         button.disabled = true;
 
-        const endpoint = '/.netlify/functions/send-email';
+        const formData = new FormData(contactForm);
 
-        const payload = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            message: document.getElementById('message').value
-        };
-
-        fetch(endpoint, {
+        fetch('/', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
         })
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
-            return response.text();
-        })
-        .then(() => {
-            alert('Message sent successfully!');
+            alert('Message sent successfully! We will get back to you soon.');
             contactForm.reset();
         })
         .catch((error) => {
             console.error('Send failed:', error);
-            alert('Failed to send message. Please try again later or check the function logs.');
+            alert('Failed to send message. Please try again later.');
         })
         .finally(() => {
             button.textContent = 'Send Message';

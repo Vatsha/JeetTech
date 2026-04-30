@@ -205,7 +205,12 @@
           </div>
         </div>
         <div class="contact-form">
-          <form id="contact-form" action="/send-email" method="POST">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?submitted=true">
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="subject" value="New contact form message from %{formName}">
+            <p class="hp-field" style="position:absolute;left:-9999px" aria-hidden="true">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" id="name" name="name" required>
